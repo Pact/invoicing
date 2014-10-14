@@ -475,6 +475,14 @@ module Invoicing
       format_currency_value(net_amount)
     end
 
+    def per_unit_amount
+      ledger_item_class_info.get(self, :per_unit_amount)
+    end
+
+    # +per_unit_amount+ formatted in human-readable form using the ledger item's currency.
+    def per_unit_amount_formatted
+      format_currency_value(per_unit_amount)
+    end
 
     # You must overwrite this method in subclasses of +Invoice+, +CreditNote+ and +Payment+ so that it returns
     # details of the party sending the document. See +sender_id+ above for a detailed interpretation of
