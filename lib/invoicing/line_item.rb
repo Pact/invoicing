@@ -217,6 +217,10 @@ module Invoicing
       format_currency_value(gross_amount)
     end
 
+    def per_item_amount_formatted
+      format_currency_value(per_item_amount)
+    end
+
     # We don't actually implement anything using +method_missing+ at the moment, but use it to
     # generate slightly more useful error messages in certain cases.
     def method_missing(method_id, *args)
