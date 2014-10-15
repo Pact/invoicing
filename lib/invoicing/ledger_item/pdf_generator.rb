@@ -71,7 +71,7 @@ module Invoicing
         invoice.line_items.each_with_index do |line_item, index|
           net_amount = line_item.net_amount_formatted
           table_details <<
-              [index + 1, line_item.description, line_item.quantity, line_item.per_unit_amount_formatted, net_amount]
+              [index + 1, line_item.description, line_item.quantity, line_item.per_item_amount_formatted, net_amount]
         end
         pdf.table(table_details, column_widths: [40, 320, 60, 60, 60], header: true,
                   cell_style: {padding: 5, border_width: 0.5}) do
